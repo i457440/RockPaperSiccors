@@ -1,3 +1,56 @@
-div.body{
-    text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    margin: 15px 0;
+}
+h2{
+    font-weight: bold;
+}
+.container{
+    display: flex;
+}
+.section{
+    width: 350px;
+    
+}
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    margin: 10px;
+    color: rgb(0, 0, 0);
+}
+.show{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+}
+.show i{
+    font-size: 100px;
+    color: orange;
+}
+
+.selection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 100px;
+}
+.selection button{
+    margin: 20px;
+    padding: 0px;
+    border:none;
+    font-size: 50px;
+    color: orange;
 }
