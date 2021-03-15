@@ -52,6 +52,56 @@
         const randomClasses = ["fas fa-hand-rock", "fas fa-hand-paper","fas fa-hand-scissors"];
         const text = document.getElementById('demo');
         const text2 = document.getElementById('demo2');
+
+        // Game Functionality: Setting forEach function for the buttons.
+    const game = () =>{
+    buttons.forEach(btn =>{
+        btn.addEventListener('click',(e)=>{
+
+           let clickedBtn = e.target.className;
+           showIcon.className = clickedBtn;
+           let randomNum = Math.floor(Math.random() * 3);
+           computerShowIcon.className = randomClasses[randomNum];
+           
+           // als het gelijkspel is 
+           if(showIcon.className === computerShowIcon.className){
+               pScore.innerHTML = pScore.innerHTML;
+               cScore.innerHTML = cScore.innerHTML;
+               text.innerHTML = "It's a Tie ! ";
+           } 
+          // Als het geen gelijkspel is
+           else if(showIcon.className === randomClasses[0] && computerShowIcon.className === randomClasses[2]){
+               pScore.innerHTML = playerScore;
+               playerScore++;
+               text.innerHTML = "It's a Win ! ";
+           }else if(showIcon.className === randomClasses[0] && computerShowIcon.className === randomClasses[1]){
+               cScore.innerHTML = computerScore;
+               computerScore++;
+               text.innerHTML = "You Loosed ! ";
+           }else if(showIcon.className === randomClasses[1] && computerShowIcon.className === randomClasses[2]){
+               cScore.innerHTML = computerScore;
+               computerScore++;
+               text.innerHTML = "You Loosed ! ";
+           }else if(showIcon.className === randomClasses[1] && computerShowIcon.className === randomClasses[0]){
+               pScore.innerHTML = playerScore;
+               playerScore++;
+               text.innerHTML = "It's a Win ! ";
+           }else if(showIcon.className === randomClasses[2] && computerShowIcon.className === randomClasses[0]){
+               cScore.innerHTML = computerScore;
+               computerScore++;
+               text.innerHTML = "You Loosed ! ";            
+           }else if(showIcon.className === randomClasses[2] && computerShowIcon.className === randomClasses[1]){
+               pScore.innerHTML = playerScore;
+               playerScore++;
+               text.innerHTML = "It's a Win ! ";
+               
+           }
+        });
+    });
+}
+// Calling the function.
+game();
+// This function contains all the game logic.
     </script>
 </body>
 </html>
